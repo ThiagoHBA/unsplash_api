@@ -3,7 +3,7 @@ import 'package:unsplash_api/api/model/url_model.dart';
 import 'package:unsplash_api/api/repositories/images_repository.dart';
 
 class HomeController extends GetxController {
-  late final UrlModel _actualImage;
+  var _actualImage;
   ImagesRepository _imagesRepository = ImagesRepository();
   UrlModel get actualImage => _actualImage;
 
@@ -28,7 +28,7 @@ class HomeController extends GetxController {
     } catch (e) {
       _error.value = true;
       Get.snackbar(
-        'Erro',
+        'Erro ao capturar imagem',
         e.toString(),
       );
     }
