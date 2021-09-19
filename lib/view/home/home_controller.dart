@@ -21,7 +21,7 @@ class HomeController extends GetxController {
   }
 
   Future<UrlModel> getRandomImages() async {
-    late final UrlModel _image;
+    var _image;
     try {
       _image = await _imagesRepository.getRandomImage();
       _error.value = false;
